@@ -51,3 +51,12 @@
   font-size: 18px;
 }
 
+.container .correct {
+  background: #dffff2;
+  border-color: #00d397;
+}
+
+.container .wrong {
+  background: #ffebeb;
+  border-color: #ff4a4a;
+}
