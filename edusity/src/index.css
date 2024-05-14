@@ -22,8 +22,8 @@ a {
   padding-right: 10%;
 }
 
-.btn{
-  background: #FFF;
+.btn {
+  background: #fff;
   color: #212121;
   padding: 14px 25px;
   font-size: 16px;
@@ -36,7 +36,12 @@ a {
   justify-content: center;
 }
 
-.btn img{
+.btn img {
   width: 20px;
   margin-left: 10px;
+}
+
+.btn.dark-btn {
+  background: #212EA0;
+  color: #fff;
 }
