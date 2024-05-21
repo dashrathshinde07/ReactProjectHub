@@ -1,19 +1,43 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Nav from "./Nav";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { productContext } from "../utils/Context";
 import Loading from "./Loading";
+import axios from "../utils/axios";
 
 const Home = () => {
   const [products] = useContext(productContext);
 
-  console.log(products);
+  const { search } = useLocation();
+
+  const category = decodeURIComponent(search.split("=")[1]);
+  // console.log(category);
+
+  const [filteredProducts, setFilteredProducts] = useState(null);
+
+  const getProductsCategory = async () => {
+    try {
+      const { data } = await axios.get(`/products/category/${category}`);
+      // filteredProducts = data;
+      // console.log(data)
+      setFilteredProducts(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if(!filteredProducts) setFilteredProducts(products)
+    if (category != undefined) getProductsCategory();
+  }, [category,products]);
+
+  console.log(filteredProducts);
 
   return products ? (
     <>
       <Nav />
       <div className="h-full w-[85%] p-10 pt-[5%] flex flex-wrap overflow-x-hidden overflow-y-auto">
-        {products.map((product, i) => (
+        {filteredProducts && filteredProducts.map((product, i) => (
           <Link
             key={i}
             to={`/details/${product.id}`}
