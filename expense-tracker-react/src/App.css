@@ -150,3 +150,45 @@ input[type='number'] {
 .list li:hover .delete-btn {
   opacity: 1;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 0 10px;
+  }
+
+  .inc-exp-container {
+    flex-direction: column;
+  }
+
+  .inc-exp-container > div {
+    border-right: none;
+    border-bottom: 1px solid #dedede;
+    padding: 10px 0;
+  }
+
+  .inc-exp-container > div:last-of-type {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  .money {
+    font-size: 18px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .delete-btn {
+    font-size: 18px;
+    padding: 2px 4px;
+  }
+}
