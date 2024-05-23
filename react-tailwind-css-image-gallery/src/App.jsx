@@ -1,9 +1,33 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import ImageCard from "./components/ImageCard";
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+  const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [term, setTerm] = useState("");
 
-export default App
+  useEffect(() => {
+    fetch(
+      `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setImages(data.hits);
+        setLoading(false);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  return <>
+    <>
+      <div className="container mx-auto">
+        <div className="grid grid-cols-3 gap-4">
+         {images.map(image => 
+         <ImageCard key={image.id} image={image} />)}
+        </div>
+      </div>
+    </>
+  </>;
+};
+
+export default App;
