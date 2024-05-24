@@ -1,0 +1,9 @@
+.contact_section h1 {
+  font-size: 48px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.contact_section p {
+  font-weight: 500;
+}
