@@ -35,6 +35,9 @@
   height: 40px;
   padding: 0 8px;
 }
+.form_controler textarea {
+padding: 10px;
+}
 
 .form_controler label{
   position: absolute;
