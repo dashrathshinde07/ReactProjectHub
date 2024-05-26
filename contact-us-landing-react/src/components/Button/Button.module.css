@@ -1,4 +1,4 @@
-.primary_btn{
+.primary_btn {
   padding: 18px 10px;
   background-color: black;
   color: white;
@@ -10,4 +10,21 @@
   font-size: 16px;
   justify-content: center;
   text-transform: uppercase;
+  cursor: pointer;
+}
+.outline_btn {
+  padding: 18px 10px;
+  border: 1px solid black;
+  color: black;
+  min-width: 220px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  justify-content: center;
+  text-transform: uppercase;
+  background-color: white;
+  width: 100%;
+  cursor: pointer;
 }
