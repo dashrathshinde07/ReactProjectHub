@@ -14,6 +14,8 @@ const App = () => {
     <>
       <div>
         <Navbar />
+
+        
         <Hero />
         <div className="container">
           <Title subTitle="OUR PROGRAM" title="What We Offer" />
